@@ -1,0 +1,16 @@
+{
+  "name": "ie3-app-dev-backend",
+  "version": "1.0.0",
+  "description": "Backend for yek yok in Node, Express, and MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kevin Lee",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.6"
+  }
+}

@@ -46,4 +46,5 @@ app.use('/api', apiRoutes)
 // Launch app to listen to specified port
 app.listen(port, function () {
   console.log("Running yek yok on port " + port)
+
 });

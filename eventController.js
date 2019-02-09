@@ -3,8 +3,7 @@ Event = require('./eventModel');
 
 // Handle index actions
 exports.index = function (req, res) {
-  Event.get(function (err, events) {
-    console.log('this get request is happening')
+  Event.find({}, function (err, events) {
     if (err) {
       res.json({
         status: 'error',

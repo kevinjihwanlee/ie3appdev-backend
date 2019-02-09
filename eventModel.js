@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 // Set up schema
-var eventSchema = mongoose.Schema({
+var eventSchema = new mongoose.Schema({
   name: {
     type: String, 
     required: true 
@@ -30,8 +30,8 @@ var eventSchema = mongoose.Schema({
 })
 
 // Export event model
-var Event = module.exports = mongoose.model('event', eventSchema);
+var Event = module.exports = mongoose.model('Events', eventSchema);
 
-module.exports.get = function (callback, limit) {
-  Event.find(callback).limit(limit);
-}
+// module.exports.get = function (callback, limit) {
+//   Event.find(callback).limit(limit);
+// }

@@ -20,8 +20,17 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json())
 
+// find appropriate database to connect to, default to localhost
+let uristring = process.env.MONGOLAB_URI || 'mongodb://localhost/yekyok'
+
 // Connect to Mongoose and set connection variable
-mongoose.connect('mongodb://localhost/yekyok')
+mongoose.connect(uristring, function (err, res) {
+  if (err) {
+    console.log('ERROR connecting to: ' + uristring + '. ' + err)
+  } else {
+    console.log('Succeeded connecting to: ' + uristring)
+  }
+})
 
 var db = mongoose.connection
 

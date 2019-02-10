@@ -43,7 +43,7 @@ exports.new = function (req, res) {
 
 // Handle view event
 exports.view = function (req, res) {
-  Event.findById(req.params.event_id, function (err, event) {
+  Event.find({'_id.$oid': req.params.event_id}).exec(function (err, event) {
     if (err) {
       res.json({
         status: 'error',

@@ -15,18 +15,23 @@ var eventSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   },
+  start_time: String,
+  end_time: String,
+  location: String, 
   saved: {
     type: Number,
     default: 0
   },
-  latitude: {
-    type: Number,
-    required: true
-  },
-  longitude: {
-    type: Number,
-    required: true
-  },
+  coordinate: {
+    latitude: {
+      type: Number,
+      required: true
+    },
+    longitude: {
+      type: Number,
+      required: true
+    },
+  }
 })
 
 // Export event model

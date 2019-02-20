@@ -23,9 +23,21 @@ exports.new = function (req, res) {
   var event = new Event()
   event.name = req.body.name 
   event.author = req.body.author 
-  event.description = req.body.description
-  event.latitude = req.body.latitude
-  event.longitude = req.body.longitude
+  event.coordinate.latitude = req.body.coordinate.latitude
+  event.coordinate.longitude = req.body.coordinate.longitude
+  // optional values
+  if ("description" in req.body) {
+    event.description = req.body.description
+  }
+  if ("start_time" in req.body) {
+    event.start_time = req.body.start_time
+  }
+  if ("end_time" in req.body) {
+    event.end_time = req.body.end_time
+  }
+  if("location" in req.body) {
+    event.location = req.body.location
+  }
   // save event and check for errors
   event.save(function (err) {
     if (err) {
@@ -70,9 +82,21 @@ exports.update = function (req, res) {
   event.name = req.body.name
   event.name = req.body.name 
   event.author = req.body.author 
-  event.description = req.body.description
-  event.latitude = req.body.latitude
-  event.longitude = req.body.longitude
+  event.coordinate.latitude = req.body.coordinate.latitude
+  event.coordinate.longitude = req.body.coordinate.longitude
+  // optional values
+  if ("description" in req.body) {
+    event.description = req.body.description
+  }
+  if ("start_time" in req.body) {
+    event.start_time = req.body.start_time
+  }
+  if ("end_time" in req.body) {
+    event.end_time = req.body.end_time
+  }
+  if("location" in req.body) {
+    event.location = req.body.location
+  }
 
   // save event and check for errors
   event.save(function (err) {

@@ -29,6 +29,9 @@ exports.new = function (req, res) {
   if ("description" in req.body) {
     event.description = req.body.description
   }
+  if ("date_event" in req.body) {
+    event.date_event = req.body.date_event
+  }
   if ("start_time" in req.body) {
     event.start_time = req.body.start_time
   }

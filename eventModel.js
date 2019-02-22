@@ -16,8 +16,8 @@ var eventSchema = new mongoose.Schema({
     default: Date.now
   },
   date_event: String, 
-  start_time: String,
-  end_time: String,
+  start_time: Date,
+  end_time: Date,
   location: String, 
   saved: {
     type: Number,

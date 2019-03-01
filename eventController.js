@@ -83,7 +83,6 @@ exports.update = function (req, res) {
     }
   })
   event.name = req.body.name
-  event.name = req.body.name 
   event.author = req.body.author 
   event.coordinate.latitude = req.body.coordinate.latitude
   event.coordinate.longitude = req.body.coordinate.longitude
